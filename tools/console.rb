@@ -34,8 +34,13 @@ blacktap = Restaurant.new("Blacktap")
 
 
 
-review1 = Review.new("Naomi", "Katz", "Artichoke", 4, "best 4am pizza")
-review2 = Review.new("David", "Benhayun", "Blacktap", 5, "milkshakes!!!!!")
+review1 = Review.new(naomi_katz, artichoke, 4, "best 4am pizza")
+review2 = Review.new(david_benhayun, blacktap, 5, "milkshakes!!!!!")
+review3 = Review.new(julian_rafa, artichoke, 4, "sick")
+review4 = Review.new(naomi_katz, blacktap, 4, "must try")
+review5 = Review.new(naomi_katz, artichoke, 4, "pizzaaaaaa")
+review6 = Review.new(david_benhayun, blacktap, 6, "def try")
+review7 = Review.new(david_rabizadeh, blacktap, 0, "worst")
 
 
 binding.pry

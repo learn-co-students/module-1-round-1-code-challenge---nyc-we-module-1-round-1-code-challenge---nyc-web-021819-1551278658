@@ -3,16 +3,16 @@
 
 class Review
 
-  attr_accessor :rating, :content
-  attr_reader :first_name, :last_name, :restaurant_name
+  attr_accessor :content, :restaurant, :customer
+  attr_reader :rating
+
 
   @@all = []
 
-  def initialize(first_name, last_name, restaurant_name, rating, content)
-    @first_name = first_name
-    @last_name = last_name
-    @restaurant_name = restaurant_name
-    @rating = rating
+  def initialize(customer, restaurant, rating, content)
+    @customer = customer
+    @restaurant = restaurant
+    self.rating = rating
     @content = content.to_s
     @@all << self
   end
@@ -21,10 +21,18 @@ class Review
     @@all
   end
 
-  def customer
-    self.first_name + " " + self.last_name
-  end
 
+  def rating=(rating)
+    if rating > 5
+      puts "highest possible rating is 5"
+      @rating = 5
+    elsif rating < 1
+      puts "lowest possible rating is 1"
+      @rating = 1
+    else
+      @rating = rating
+    end
+  end
 
 #need to make a method that restricts the rating from going below 1 and above 5
 
