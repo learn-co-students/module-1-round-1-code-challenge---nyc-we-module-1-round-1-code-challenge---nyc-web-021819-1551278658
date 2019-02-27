@@ -1,8 +1,44 @@
 class Restaurant
   attr_accessor :name
+  @@all = []
 
   def initialize(name)
     @name = name
+    @@all << self
   end
 
+  def self.all
+    @@all
+  end
+
+  def self.find_by_name(name)
+    self.all.find do |restaurant|
+      restaurant.name == name
+    end
+  end
+
+  def customers
+    Review.all.map do |review|
+      review.customer if review.restaurant == self
+    end.uniq.compact
+  end
+
+  def reviews
+    Review.all.select do |review|
+      review if review.restaurant == self
+    end
+  end
+
+  def average_star_rating
+    total_stars = self.reviews.map do |review|
+      review.rating
+    end.compact.reduce(:+)
+    total_stars.to_f / self.reviews.length
+  end
+
+  def longest_review
+    self.reviews.max_by do |review|
+      review.content.length
+    end
+  end
 end
