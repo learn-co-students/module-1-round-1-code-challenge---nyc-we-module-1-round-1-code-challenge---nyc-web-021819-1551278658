@@ -20,7 +20,7 @@ class Customer
 
   def self.find_by_name(full_name)
     self.all.find do |customer|
-      customer.first_name == full_name.split[0]
+      (customer.first_name == full_name.split[0]) && (customer.last_name == full_name.split[1])
       #full_name.split[0] gives just the first name from a fullname.
     end
   end

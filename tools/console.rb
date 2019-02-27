@@ -15,7 +15,7 @@ guy_pierce = Customer.new("Guy", "Pierce")
 
 #customer tests
 puts "Puts true if self.find_by_name works for Customer"
-puts (Customer.find_by_name(guy.full_name) == guy)
+puts (Customer.find_by_name(guy_pierce.full_name) == guy_pierce)
 
 #restaurants
 mcdonalds = Restaurant.new("McDonalds")
@@ -27,7 +27,7 @@ puts "Puts true if self.find_by_name works for Restaurant"
 puts (Restaurant.find_by_name("Guy Fieri's American Kitchen") == flavortown)
 
 #reviews
-guy_flavortown_review = guy.add_review(flavortown, "It was a one way train right into flavortown that's the stuff yeah damn dude good job.",5)
+guy_flavortown_review = guy.add_review(flavortown, "It was a one way train right into flavortown that's the stuff yeah damn dude good job.",9)
 guy_mcdonalds_review = guy.add_review(mcdonalds, "BAM! Thank you. Hell yeah that's what I'm talking about.", 5)
 guy_olive_garden_review = guy.add_review(olive_garden, "Unlimited breadsticks? More like unlimited flavor. My man.", 5)
 bobby_flavortown_review = bobby.add_review(flavortown, "An absolute garbage sandwich. Made me want to give up eating.", 1)
@@ -43,5 +43,5 @@ puts flavortown.average_star_rating_int == 4
 puts "Puts true if Guy Fieri has made four reviews"
 puts guy.num_reviews == 4
 
-#binding.pry
+binding.pry
 0 #leave this here to ensure binding.pry isn't the last line
