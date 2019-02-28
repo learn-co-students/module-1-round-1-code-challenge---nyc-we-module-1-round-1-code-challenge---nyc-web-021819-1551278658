@@ -30,7 +30,7 @@ We've provided you with a console that you can use to test your code. To enter a
 #### Build the following methods on the `Customer` class
 
 - `Customer.all`
-  - should return **all** of the customer instances
+  - should return **all** of the customer instances -->
 - `Customer.find_by_name(name)`
   - given a string of a **full name**, returns the **first customer** whose full name matches
 - `Customer.find_all_by_first_name(name)`
@@ -44,13 +44,14 @@ We've provided you with a console that you can use to test your code. To enter a
 
 - `Restaurant.all`
   - returns an array of all restaurants
+
 - `Restaurant.find_by_name(name)`
-  - given a string of restaurant name, returns the first restaurant that matches
+  - given a string of restaurant name, returns the first restaurant that matches -->
 
 ---
 
 #### Build out the following methods on the `Review` class
-
+<!--
 - `Review.all`
   - returns all of the reviews
 - `Review#customer`
@@ -62,7 +63,7 @@ We've provided you with a console that you can use to test your code. To enter a
 - `Review#rating`
   - returns the star rating for a restaurant. This should be an integer from 1-5
 - `Review#content`
-  - returns the review content, as a string, for a particular review
+  - returns the review content, as a string, for a particular review --> -->
 
 ---
 
@@ -70,12 +71,12 @@ We've provided you with a console that you can use to test your code. To enter a
 
 #### Customer
 
-- `Customer#add_review(restaurant, content, rating)`
-  - given a **restaurant object**, some review content (as a string), and a star rating (as an integer), creates a new review and associates it with that customer and restaurant.
-- `Customer#num_reviews`
+`Customer#add_review(restaurant, content, rating)`
+  - given a **restaurant object**, some review content (as a string), and a star rating (as an integer), creates a new review and associates it with that customer and restaurant. -->
+-- - `Customer#num_reviews`
   - Returns the total number of reviews that a customer has authored
 - `Customer#restaurants`
-  - Returns a **unique** array of all restaurants a customer has reviewed
+  - Returns a **unique** array of all restaurants a customer has reviewed -->
 
 #### Restaurant
 
