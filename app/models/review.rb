@@ -1,6 +1,7 @@
 class Review
-  attr_reader :name, :customer, :restaurant
-  attr_accessor :rating, :content
+
+  #I included
+  attr_reader :customer, :restaurant, :content , :rating
 
   @@all = []
 
@@ -10,14 +11,11 @@ class Review
     @content = content
     @rating = rating
 
-
     @@all << self
   end
 
   def self.all
     @@all
   end
-
-
 
 end

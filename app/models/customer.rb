@@ -19,37 +19,87 @@ class Customer
   end
 
   def self.find_by_name(name)
-    self.all.find do |names|
-      names.first_name == name && names.last_name == name
+    self.all.find do |customer|
+      customer.full_name == name
+    binding.pry
     end
   end
 
-  def self.find_all_by_first_name(name)
-    self.all.select do |names|
-      names.first_name == name
+  def self.find_all_by_first_name(firstname)
+    self.all.select do |customer|
+      customer.first_name == firstname
+    end
   end
-end
 
-def self.all_names
-  full_name.all.each do |names|
-    names
+  def self.all_names
+    self.all.select do |customer|
+      customer.full_name
+    end
   end
-end
 
-def add_review(restaurant, content, rating)
- Review.new(self, restaurant, content, rating )
+def add_review
+  Review.new(self, restaurant, content, rating)
 end
 
 def num_reviews
-  Review.all.map do |reviews|
-    reviews.customer == self
-  end
+  Reviews.all.select do |review|
+    review.customer == self
+  end.count
 end
 
 def restaurants
-  Review.all.select do |reviews|
-    reviews.customer == self
+  self.reviews.map do |review|
+    review.restaurant
   end.uniq
 end
 
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+#======>my answers duringt the test <=========
+# def self.find_by_name(name)
+#     self.all.find do |names|
+#       names.first_name == name && names.last_name == name
+#     end
+#   end
+#
+#    def self.find_all_by_first_name(name)
+#     self.all.select do |names|
+#       names.first_name == name
+#   end
+# end
+#
+#  def self.all_names
+#   full_name.all.each do |names|
+#     names
+#   end
+# end
+#
+#  def add_review(restaurant, content, rating)
+#  Review.new(self, restaurant, content, rating )
+# end
+#
+#  def num_reviews
+#   Review.all.map do |reviews|
+#     reviews.customer == self
+#   end
+# end
+#
+#  def restaurants
+#   Review.all.select do |reviews|
+#     reviews.customer == self
+#   end.uniq
+# end
+#
